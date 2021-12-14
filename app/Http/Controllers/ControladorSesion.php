@@ -21,8 +21,8 @@ class ControladorSesion extends Controller
     }
     public function ingresar(Request $request)
     {
-        if($token = Auth::attempt($request->all()))
-            return $token;  
+        if ($token = Auth::attempt($request->all()))
+            return response()->json($token, Response::HTTP_OK);
         return response(null,Response::HTTP_UNAUTHORIZED);
     }
     public function registro(Request $request)
@@ -30,7 +30,7 @@ class ControladorSesion extends Controller
         $usuario = $request-> all();
         $usuario['password'] = Hash::make( $usuario['password']);
         $usuario = Usuario::create($usuario);
-        return Auth::login($usuario);
+        return response()->json(Auth::login($usuario), Response::HTTP_OK);
     }
     public function salir()
     {
