@@ -16,7 +16,8 @@ class Auto extends Model
 		'Marca',
 		'Modelo',
         'Traccion',
-        'Precio'
+        'Precio',
+		'telefono'
 	];
     
     public function ventas()
