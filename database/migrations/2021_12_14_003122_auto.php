@@ -20,7 +20,7 @@ class Auto extends Migration
             $table->string('Modelo');
             $table->string('Traccion');
             $table->integer('Precio');
-            $table->string('telefono');
+            $table->string('Telefono');
         });
     }
 
